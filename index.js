@@ -15,8 +15,8 @@ const reviews = [
   },
   {
     id: 3,
-    name: "Enitan Itunuoluwa",
-    job: " Software Engineer",
+    name: "Enitan Abimbola",
+    job: " Oga Boss",
     img: "img/bolu.jpg",
     text: "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz.",
   },
@@ -48,6 +48,12 @@ function showPerson(person) {
   author.textContent = item.name;
   job.textContent = item.job;
   info.textContent = item.text;
+  if (item == reviews[2]) {
+    img.classList.add("cover");
+  }
+  if (item !== reviews[2]) {
+    img.classList.remove("cover");
+  }
 }
 
 review.addEventListener("dblclick", (e) => {
@@ -66,12 +72,10 @@ nextBtn.addEventListener("click", (e) => {
     currentItem = 0;
   }
   showPerson(currentItem);
-  // console.log(e.target);
-  if (e.target.matches(".next-btn")) {
-    nextBtn.classList.add("active");
-    prevBtn.classList.remove("active");
-    surpriseBtn.classList.remove("random");
-  }
+
+  nextBtn.classList.add("active");
+  prevBtn.classList.remove("active");
+  surpriseBtn.classList.remove("random");
 });
 
 // nextBtn.addEventListener("click", (e) => {

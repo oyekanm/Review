@@ -8,12 +8,15 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 .container {
-  width: 1200px;
-  margin: 10% auto 0;
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .title h2 {
   text-align: center;
   font-size: 40px;
+  font-family: "Roboto", sans-serif;
+  color: hsl(209, 61%, 16%);
 }
 .underline {
   width: 50px;
@@ -23,23 +26,24 @@ body {
 }
 .review {
   background: #fff;
-  width: 700px;
-  max-width: 60%;
-  box-shadow: 0 2px 5px 5px rgb(160, 160, 160);
-  margin: 30px auto;
-  padding: 40px;
+  box-shadow: 0 2px 5px 5px rgba(160, 159, 159, 0.4);
+  margin: 50px auto 10px;
+  border-radius: 10px;
+  padding: 20px;
   text-align: center;
   transition: all 0.5s;
 }
 .img-container {
-  width: 250px;
-  height: 250px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   /* overflow: hidden; */
   margin: 0 auto 20px;
   background: rgb(33, 250, 250);
 }
-
+.cover {
+  object-fit: fill !important;
+}
 #person-img {
   width: 100%;
   height: 100%;
@@ -50,29 +54,28 @@ body {
 #author {
   font-size: 20px;
   letter-spacing: 2px;
+  color: hsl(209, 61%, 16%);
 }
 #job {
   text-transform: uppercase;
   margin: 10px 0 20px;
+  font-size: 15px;
   color: rgb(33, 250, 250);
 }
 #info {
   font-size: 17px;
+  color: hsl(210, 22%, 49%);
 }
-.prev-btn {
-  border: none;
-  color: rgb(33, 250, 250);
-  background-color: transparent;
-  font-size: 30px;
-  transition: all 0.5s;
-}
+.prev-btn,
 .next-btn {
   border: none;
   color: rgb(33, 250, 250);
   background-color: transparent;
-  font-size: 30px;
-  margin-left: 20px;
+  font-size: 35px;
   transition: all 0.5s;
+}
+.next-btn {
+  margin-left: 20px;
 }
 .suprise {
   /* border: 1px solid rgb(33, 250, 250); */
@@ -95,6 +98,22 @@ body {
 
 @media screen and (max-width: 600px) {
   .container {
-    margin-top: 50%;
+    margin: 0 auto;
+  }
+  .title h2 {
+    font-size: 30px;
+  }
+  .review {
+    margin-bottom: 0;
+  }
+  #info {
+    font-size: 14px;
+  }
+  #author {
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+  #job {
+    margin: 2px 0 4px;
   }
 }
