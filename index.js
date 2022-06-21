@@ -11,14 +11,14 @@ const reviews = [
     name: "Zayb Boluwatife",
     job: " Intern",
     img: "img/omoerin.jpg",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magnam nesciunt sunt maxime distinctio. Autem eos ea deserunt ipsam fugiat ipsum, laudantium quidem? Quis assumenda corrupti unde alias, laboriosam quo.",
+    text: " Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.",
   },
   {
     id: 3,
     name: "Enitan Itunuoluwa",
     job: " Software Engineer",
     img: "img/bolu.jpg",
-    text: " Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi magnam nesciunt sunt maxime distinctio. Autem eos ea deserunt ipsam fugiat ipsum, laudantium quidem? Quis assumenda corrupti unde alias, laboriosam quo.",
+    text: "The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph, for quick jigs vex! Fox nymphs grab quick-jived waltz.",
   },
 ];
 
@@ -31,6 +31,7 @@ const info = document.getElementById("info");
 const prevBtn = document.querySelector(".prev-btn");
 const nextBtn = document.querySelector(".next-btn");
 const surpriseBtn = document.querySelector(".suprise");
+const review = document.querySelector(".review");
 
 let currentItem = 0;
 
@@ -49,6 +50,14 @@ function showPerson(person) {
   info.textContent = item.text;
 }
 
+review.addEventListener("dblclick", (e) => {
+  // console.log(e);
+
+  nextBtn.classList.remove("active");
+  prevBtn.classList.remove("active");
+  surpriseBtn.classList.remove("random");
+});
+
 // SHOW NEXT PERSON
 
 nextBtn.addEventListener("click", (e) => {
@@ -57,6 +66,12 @@ nextBtn.addEventListener("click", (e) => {
     currentItem = 0;
   }
   showPerson(currentItem);
+  // console.log(e.target);
+  if (e.target.matches(".next-btn")) {
+    nextBtn.classList.add("active");
+    prevBtn.classList.remove("active");
+    surpriseBtn.classList.remove("random");
+  }
 });
 
 // nextBtn.addEventListener("click", (e) => {
@@ -79,6 +94,10 @@ prevBtn.addEventListener("click", (e) => {
     currentItem = reviews.length - 1;
   }
   showPerson(currentItem);
+  // prevBtn.style.color = "rgb(22, 115, 236)";
+  prevBtn.classList.add("active");
+  nextBtn.classList.remove("active");
+  surpriseBtn.classList.remove("random");
 });
 
 // prevBtn.addEventListener("click", (e) => {
@@ -97,4 +116,7 @@ surpriseBtn.addEventListener("click", () => {
   //   console.log(currentItem);
 
   showPerson(currentItem);
+  surpriseBtn.classList.add("random");
+  nextBtn.classList.remove("active");
+  prevBtn.classList.remove("active");
 });
